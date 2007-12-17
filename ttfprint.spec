@@ -7,7 +7,6 @@ Version:	%{version}
 Release:	%{release}
 Summary:	Generates Chinese compliant postscript files for printing
 License:	GPL
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		ftp://linux.cis.nctu.edu.tw/packages/chinese/print/ttfprint/
 Source:		ftp://linux.cis.nctu.edu.tw/packages/chinese/print/ttfprint/%{name}-%{version}.tar.bz2
 # BSD has this font, so there's no resaon why we can't use it ..
