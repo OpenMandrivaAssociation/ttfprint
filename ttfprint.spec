@@ -1,10 +1,9 @@
 %define	name	ttfprint
 %define	version	0.9
-%define	release	%mkrel 6
 
 Name:		%{name}
 Version:	%{version}
-Release:	%{release}
+Release:	%mkrel 7
 Summary:	Generates Chinese compliant postscript files for printing
 License:	GPL
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
