@@ -3,7 +3,7 @@
 
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 11
+Release:	%mkrel 12
 Summary:	Generates Chinese compliant postscript files for printing
 License:	GPL
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
