@@ -35,16 +35,16 @@ while the program itself is free, the font is not "free".
 %make CFLAGS="$RPM_OPT_FLAGS"
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT%{_bindir}
-mkdir -p $RPM_BUILD_ROOT/var/spool/ttprint
-mkdir -p $RPM_BUILD_ROOT%{_libdir}/ttfprint/{hdr,tpl}
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/fonts/ttf/big5
-install -m755 ttfprint $RPM_BUILD_ROOT%{_bindir}
-bzip2 -dc %SOURCE1 > $RPM_BUILD_ROOT%{_datadir}/fonts/ttf/big5/moe_sung.ttf
+rm -rf %{buildroot}
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}/var/spool/ttprint
+mkdir -p %{buildroot}%{_libdir}/ttfprint/{hdr,tpl}
+mkdir -p %{buildroot}%{_datadir}/fonts/ttf/big5
+install -m755 ttfprint %{buildroot}%{_bindir}
+bzip2 -dc %SOURCE1 > %{buildroot}%{_datadir}/fonts/ttf/big5/moe_sung.ttf
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
