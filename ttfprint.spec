@@ -3,7 +3,7 @@
 
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 12
+Release:	%mkrel 14
 Summary:	Generates Chinese compliant postscript files for printing
 License:	GPL
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -35,16 +35,16 @@ while the program itself is free, the font is not "free".
 %make CFLAGS="$RPM_OPT_FLAGS"
 
 %install
-rm -rf %{buildroot}
-mkdir -p %{buildroot}%{_bindir}
-mkdir -p %{buildroot}/var/spool/ttprint
-mkdir -p %{buildroot}%{_libdir}/ttfprint/{hdr,tpl}
-mkdir -p %{buildroot}%{_datadir}/fonts/ttf/big5
-install -m755 ttfprint %{buildroot}%{_bindir}
-bzip2 -dc %SOURCE1 > %{buildroot}%{_datadir}/fonts/ttf/big5/moe_sung.ttf
+rm -rf $RPM_BUILD_ROOT
+mkdir -p $RPM_BUILD_ROOT%{_bindir}
+mkdir -p $RPM_BUILD_ROOT/var/spool/ttprint
+mkdir -p $RPM_BUILD_ROOT%{_libdir}/ttfprint/{hdr,tpl}
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/fonts/ttf/big5
+install -m755 ttfprint $RPM_BUILD_ROOT%{_bindir}
+bzip2 -dc %SOURCE1 > $RPM_BUILD_ROOT%{_datadir}/fonts/ttf/big5/moe_sung.ttf
 
 %clean
-rm -rf %{buildroot}
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
@@ -56,3 +56,70 @@ rm -rf %{buildroot}
 %{_datadir}/fonts/ttf/big5/*
 
 %doc INSTALL README USAGE.TXT 
+
+
+%changelog
+* Fri May 06 2011 Oden Eriksson <oeriksson@mandriva.com> 0.9-12mdv2011.0
++ Revision: 670731
+- mass rebuild
+
+* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 0.9-11mdv2011.0
++ Revision: 608044
+- rebuild
+
+* Wed Mar 17 2010 Oden Eriksson <oeriksson@mandriva.com> 0.9-10mdv2010.1
++ Revision: 524236
+- rebuilt for 2010.1
+
+* Thu Sep 03 2009 Christophe Fergeau <cfergeau@mandriva.com> 0.9-9mdv2010.0
++ Revision: 427436
+- rebuild
+
+* Wed Jun 18 2008 Thierry Vignaud <tv@mandriva.org> 0.9-8mdv2009.0
++ Revision: 225888
+- rebuild
+
+* Wed Mar 05 2008 Oden Eriksson <oeriksson@mandriva.com> 0.9-7mdv2008.1
++ Revision: 179666
+- rebuild
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Wed Aug 29 2007 Oden Eriksson <oeriksson@mandriva.com> 0.9-6mdv2008.0
++ Revision: 74780
+- Import ttfprint
+
+
+
+* Wed Jun 21 2006 Per Øyvind Karlsen <pkarlsen@mandriva.com> 0.9-6mdv2007.0
+- fix build with gcc 4.1 (P2)
+- %%mkrel
+- fix summary-ended-with-dot
+
+* Sat Jul 12 2003 Per ?yvind Karlsen <peroyvind@sintrax.net> 0.9-5mdk
+- drop redundant buildrequires
+- rm -rf $RPM_BUILD_ROOT in %%install, not %%prep
+- fix build with gcc-3.3 (P0)
+- fix unowned dir
+
+* Sat Jan 19 2002 Jeff Garzik <jgarzik@mandrakesoft.com> 0.9-4mdk
+- BuildRequires: gcc
+- Requires: common-licenses
+- s/Copyright/License/
+- Add URL tag
+- Fix rpmlint description/summary warnings
+- Build with MDK optflags
+
+* Tue Sep 12 2000 Geoffrey Lee <snailtalk@mandrakesoft.com> 0.9-3mdk
+- rebuild it with requires locales-zh (Denis.)
+- add a better description for the font.
+
+* Sat Sep 2 2000 Geoffrey Lee <snailtalk@mandrakesoft.com> 0.9-2mdk
+- include the moe_sung.ttf file.
+
+* Fri Sep 1 2000 Geoffrey Lee <snailtalk@mandrakesoft.com> 0.9-2mdk
+- first mandrake rpm.

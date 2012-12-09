@@ -1,3 +1,6 @@
 sources:
-  "moe_sung.ttf.bz2:"	5286672690a8e9edd5da7523a7c980045ad7e05b
-  "ttfprint-0.9.tar.bz2:"	1f97909cd239bbbfd7a3194c8207f0ee66a9924d
+  "moe_sung.ttf.bz2": 5286672690a8e9edd5da7523a7c980045ad7e05b
+  "ttfprint-0.9-gcc33.patch.bz2": cf94cd0ebcf2b05d3616d03154a461d48cc93609
+  "ttfprint-0.9-gcc41-fix.patch.bz2": 092e8c35b3f8ae1efa52f01578841abac0672ea4
+  "ttfprint-0.9.tar.bz2": 1f97909cd239bbbfd7a3194c8207f0ee66a9924d
+  "ttfprint.c.patch.bz2": 710c3855a080e2a15e2de5033811d0ee4db4b207
