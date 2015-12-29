@@ -1,5 +1,6 @@
 %define	name	ttfprint
 %define	version	0.9
+%define debug_package %{nil}
 
 Name:		%{name}
 Version:	%{version}
