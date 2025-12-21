@@ -18,6 +18,7 @@ Patch2:		ttfprint-0.9-gcc41-fix.patch.bz2
 Requires:	locales-zh common-licenses
 Group:		System/Internationalization
 
+BuildRequires:	make
 %description
 Program for generating Chinese-compliant postscript files for printing
 on the printer.
